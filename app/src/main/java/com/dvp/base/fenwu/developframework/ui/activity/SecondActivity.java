@@ -5,15 +5,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 
 import com.dvp.base.fenwu.developframework.R;
-import com.dvp.base.fenwu.developframework.bean.SUser;
+import com.dvp.base.fenwu.developframework.demo.bean.SUser;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 
 public class SecondActivity extends AppCompatActivity
 {

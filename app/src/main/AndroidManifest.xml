@@ -26,6 +26,16 @@
         </activity>
         <activity android:name=".ui.activity.ListActivity">
         </activity>
+        <activity android:name=".ui.Test1Activity">
+        </activity>
+        <activity android:name=".ui.activity.RxjavaTest1Activity">
+        </activity>
+        <activity android:name=".ui.design.DecoratorPattern.Design1Activity">
+        </activity>
+        <activity android:name=".ui.activity.MultiFragmentActivity">
+        </activity>
+        <activity android:name=".downloadModule.DownLoadManagerActivity">
+        </activity>
     </application>
 
 </manifest>

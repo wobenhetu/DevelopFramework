@@ -42,4 +42,13 @@
         app:layout_anchorGravity="top|center_horizontal"
         android:layout_gravity="bottom|center_horizontal"/>
 
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@mipmap/dog"
+        android:id="@+id/imageView3"
+        app:layout_anchor="@+id/include"
+        app:layout_anchorGravity="center_vertical|left"
+        android:layout_gravity="center_vertical|right"/>
+
 </android.support.design.widget.CoordinatorLayout>

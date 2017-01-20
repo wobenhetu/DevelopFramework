@@ -3,17 +3,14 @@ package com.dvp.base.fenwu.developframework.ui.activity;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.AbsListView;
 import android.widget.ListView;
 
 import com.dvp.base.fenwu.developframework.R;
-import com.dvp.base.fenwu.developframework.bean.TestListBean;
+import com.dvp.base.fenwu.developframework.demo.bean.TestListBean;
 import com.dvp.base.fenwu.developframework.ui.adapter.ListAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Timer;
-import java.util.TimerTask;
 
 public class ListActivity extends AppCompatActivity
 {

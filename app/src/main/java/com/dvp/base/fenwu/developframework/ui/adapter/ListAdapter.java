@@ -10,14 +10,11 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.dvp.base.fenwu.developframework.R;
-import com.dvp.base.fenwu.developframework.bean.TestListBean;
-
-import junit.framework.Test;
+import com.dvp.base.fenwu.developframework.demo.bean.TestListBean;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import jp.wasabeef.glide.transformations.BlurTransformation;
 import jp.wasabeef.glide.transformations.CropCircleTransformation;
 
 /**

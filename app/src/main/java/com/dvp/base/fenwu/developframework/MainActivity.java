@@ -2,9 +2,10 @@ package com.dvp.base.fenwu.developframework;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
-import android.support.design.widget.Snackbar;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -15,13 +16,20 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.dvp.base.fenwu.developframework.bean.SUser;
-import com.dvp.base.fenwu.developframework.bean.TestBean;
-import com.dvp.base.fenwu.developframework.interfaces.ApiService;
-import com.dvp.base.fenwu.developframework.ui.activity.ListActivity;
-import com.dvp.base.fenwu.developframework.ui.activity.SecondActivity;
+import com.bumptech.glide.Glide;
+import com.daimajia.androidanimations.library.Techniques;
+import com.daimajia.androidanimations.library.YoYo;
+import com.dvp.base.fenwu.developframework.demo.bean.SUser;
+import com.dvp.base.fenwu.developframework.demo.bean.TestBean;
+import com.dvp.base.fenwu.developframework.demo.bean.TestGson;
+import com.dvp.base.fenwu.developframework.demo.interfaces.ApiService;
+import com.dvp.base.fenwu.developframework.downloadModule.DownLoadManagerActivity;
+import com.dvp.base.fenwu.developframework.ui.activity.MultiFragmentActivity;
+import com.dvp.base.fenwu.developframework.ui.activity.RxjavaTest1Activity;
+import com.google.gson.Gson;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -42,6 +50,10 @@ public class MainActivity extends AppCompatActivity
     Button button;
     @Bind(R.id.button2)
     Button button2;
+    @Bind(R.id.imageView3)
+    ImageView imageView3;
+
+    private MyHandler handler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -58,8 +70,11 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View view)
             {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+               /* Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();*/
+                Intent intent = new Intent(MainActivity.this, DownLoadManagerActivity.class);
+                startActivity(intent);
+
             }
         });
 
@@ -71,9 +86,116 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-        Log.i("dfw===1==",String.valueOf(SUser.sUserId));
+        Log.i("dfw===1==", String.valueOf(SUser.sUserId));
         SUser.sUserId = 2;
-        Log.i("dfw===2==",String.valueOf(SUser.sUserId));
+        Log.i("dfw===2==", String.valueOf(SUser.sUserId));
+
+        //testGSON();
+        testHandler();
+        //testGlide();
+    }
+
+    private void testGlide()
+    {
+        Glide.with(MainActivity.this).load("http://hpw123.coding.me/img/avatar.png").into(imageView3);
+    }
+    private void testHandler()
+    {
+        handler = new MyHandler();
+        handler.postDelayed(new Runnable()
+        {
+            @Override
+            public void run()
+            {
+                System.out.println("dfw==========dfasdfasdfasd");
+                handler.sendEmptyMessage(0);
+            }
+        }, 3000);
+
+       /* new Thread(new Runnable()
+        {
+            @Override
+            public void run()
+            {
+                try
+                {
+                    Thread.sleep(3000);
+
+
+                } catch (InterruptedException e)
+                {
+                    e.printStackTrace();
+                }
+                handler.sendEmptyMessage(0);
+            }
+        }).start();*/
+    }
+
+    private class MyHandler extends Handler
+    {
+
+        @Override
+        public void handleMessage(Message msg)
+        {
+            super.handleMessage(msg);
+            switch (msg.what)
+            {
+                case 0:
+                    textView2.setText("handler执行完毕了，哈哈哈");
+                    break;
+            }
+        }
+    }
+
+
+    private void testGSON()
+    {
+        Gson gson = new Gson();
+
+        String jsonString = "{\"code\":\"200\",\n" +
+                " \"data\":[{\"name\":null,\"id\":\"123456\"},{\"name\":\"lixin\",\"id\":\"123456\"}],\n" +
+                " \"data2\":[{\"name\":null,\"id\":\"123456\"},{\"name\":\"lixin\",\"id\":\"123456\"}],\n" +
+                " \"msg\":\"hahahaha\"\n" +
+                "}";
+
+        String jsonString1 = "{\n" +
+                "   \"id\":\"asdfasd\",\n" +
+                "   \"name\":\"asdf\",\n" +
+                "   \"nicheng\":\"asdfasdf\"\n" +
+                "}";
+
+        String jsonString2 = "[{\"id\":\"asdfasd12312\",\n" +
+                "   \"name\":\"asdf\",\n" +
+                "   \"nicheng\":\"asdfasdf\"\n" +
+                "},\n" +
+                "   {\"id\":\"asdfasd123\",\n" +
+                "   \"name\":\"asdf\",\n" +
+                "   \"nicheng\":\"asdfasdf\"\n" +
+                "},\n" +
+                "   {\"id\":\"asdfasd\",\n" +
+                "   \"name\":\"asdf\",\n" +
+                "   \"nicheng\":\"asdfasdf\"\n" +
+                "},\n" +
+                "    {\"id\":\"asdfasd23444\",\n" +
+                "   \"name\":\"asdf\",\n" +
+                "   \"nicheng\":\"asdfasdf\"\n" +
+                "}]";
+
+        String jsonString3 = "";
+
+        TestGson testGson = gson.fromJson(jsonString2, TestGson.class);
+
+        System.out.println("dfw===" + testGson.toString());
+
+        if (testGson.getData().get(0).getName() != null)
+        {
+            textView2.setText(testGson.getData().get(0).getName().toString());
+        } else
+        {
+            textView2.setText("该对象为空");
+        }
+
+
     }
 
     @Override
@@ -166,6 +288,9 @@ public class MainActivity extends AppCompatActivity
             {
                 Log.i("response", response.toString());
                 textView2.setText(response.body().getData().toString());
+                Gson gson = new Gson();
+                TestBean testBean = gson.fromJson(response.body().getData().toString(), TestBean.class);
+                System.out.println("dfw====" + testBean.toString());
             }
 
             @Override
@@ -181,7 +306,11 @@ public class MainActivity extends AppCompatActivity
     @OnClick(R.id.button2)
     public void onCallClick()
     {
-        Intent intent = new Intent(this, ListActivity.class);
-        startActivity(intent);
+        /*Intent intent = new Intent(this, ListActivity.class);
+        startActivity(intent);*/
+
+        YoYo.with(Techniques.Bounce)
+                .duration(2000)
+                .playOn(findViewById(R.id.button2));
     }
 }
