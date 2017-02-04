@@ -1,9 +1,15 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
              xmlns:tools="http://schemas.android.com/tools"
              android:layout_width="match_parent"
              android:layout_height="wrap_content"
+              android:orientation="vertical"
              tools:context="com.dvp.base.fenwu.developframework.ui.activity.BlankFragment3">
 
+    <Button
+        android:id="@+id/btn_next"
+        android:text="跳转到第四个fragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
     <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="match_parent"
@@ -13,4 +19,4 @@
         android:text="fragment3"/>
 
 
-</FrameLayout>
+</LinearLayout>

@@ -27,6 +27,7 @@ import com.dvp.base.fenwu.developframework.demo.bean.TestBean;
 import com.dvp.base.fenwu.developframework.demo.bean.TestGson;
 import com.dvp.base.fenwu.developframework.demo.interfaces.ApiService;
 import com.dvp.base.fenwu.developframework.downloadModule.DownLoadManagerActivity;
+import com.dvp.base.fenwu.developframework.fragmentmodule.HomeActivity;
 import com.dvp.base.fenwu.developframework.ui.activity.MultiFragmentActivity;
 import com.dvp.base.fenwu.developframework.ui.activity.RxjavaTest1Activity;
 import com.google.gson.Gson;
@@ -72,7 +73,7 @@ public class MainActivity extends AppCompatActivity
             {
                /* Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();*/
-                Intent intent = new Intent(MainActivity.this, DownLoadManagerActivity.class);
+                Intent intent = new Intent(MainActivity.this, HomeActivity.class);
                 startActivity(intent);
 
             }

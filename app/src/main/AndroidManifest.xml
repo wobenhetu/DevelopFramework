@@ -36,6 +36,8 @@
         </activity>
         <activity android:name=".downloadModule.DownLoadManagerActivity">
         </activity>
+        <activity android:name=".fragmentmodule.HomeActivity">
+        </activity>
     </application>
 
 </manifest>
