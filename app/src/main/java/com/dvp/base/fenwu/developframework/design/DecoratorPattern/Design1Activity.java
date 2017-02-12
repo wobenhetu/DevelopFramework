@@ -1,4 +1,4 @@
-package com.dvp.base.fenwu.developframework.ui.design.DecoratorPattern;
+package com.dvp.base.fenwu.developframework.design.DecoratorPattern;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

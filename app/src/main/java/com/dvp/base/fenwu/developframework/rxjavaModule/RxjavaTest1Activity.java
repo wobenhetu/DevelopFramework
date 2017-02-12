@@ -1,4 +1,4 @@
-package com.dvp.base.fenwu.developframework.ui.activity;
+package com.dvp.base.fenwu.developframework.rxjavaModule;
 
 import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;

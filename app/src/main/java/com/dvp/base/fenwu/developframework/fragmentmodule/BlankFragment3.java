@@ -1,4 +1,4 @@
-package com.dvp.base.fenwu.developframework.ui.activity;
+package com.dvp.base.fenwu.developframework.fragmentmodule;
 
 
 import android.app.Fragment;
@@ -19,17 +19,18 @@ import butterknife.OnClick;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class BlankFragment2 extends Fragment
+public class BlankFragment3 extends Fragment
 {
 
 
     @Bind(R.id.btn_next)
     Button btnNext;
+
     // Fragment管理对象
     private FragmentManager manager;
     private FragmentTransaction ft;
 
-    public BlankFragment2()
+    public BlankFragment3()
     {
         // Required empty public constructor
     }
@@ -40,7 +41,7 @@ public class BlankFragment2 extends Fragment
                              Bundle savedInstanceState)
     {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_blank_fragment2, container, false);
+        View view = inflater.inflate(R.layout.fragment_blank_fragment3, container, false);
         ButterKnife.bind(this, view);
         init();
         return view;
@@ -60,10 +61,10 @@ public class BlankFragment2 extends Fragment
     @OnClick(R.id.btn_next)
     public void onClick()
     {
-        BlankFragment3 blankFragment3 = new BlankFragment3();
+        BlankFragment4 blankFragment4 = new BlankFragment4();
         ft = manager.beginTransaction();
 //当前的fragment会被myJDEditFragment替换
-        ft.replace(R.id.content_fl, blankFragment3);
+        ft.replace(R.id.content_fl, blankFragment4);
         ft.addToBackStack(null);
         ft.commit();
     }

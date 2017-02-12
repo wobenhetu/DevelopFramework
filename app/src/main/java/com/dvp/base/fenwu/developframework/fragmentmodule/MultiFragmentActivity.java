@@ -1,4 +1,4 @@
-package com.dvp.base.fenwu.developframework.ui.activity;
+package com.dvp.base.fenwu.developframework.fragmentmodule;
 
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
@@ -7,6 +7,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.LinearLayout;
 
 import com.dvp.base.fenwu.developframework.R;
+import com.dvp.base.fenwu.developframework.fragmentmodule.BlankFragment1;
+import com.dvp.base.fenwu.developframework.fragmentmodule.BlankFragment2;
+import com.dvp.base.fenwu.developframework.fragmentmodule.BlankFragment3;
+import com.dvp.base.fenwu.developframework.fragmentmodule.BlankFragment4;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;

@@ -1,4 +1,4 @@
-package com.dvp.base.fenwu.developframework.ui.activity;
+package com.dvp.base.fenwu.developframework.fragmentmodule;
 
 
 import android.app.Fragment;

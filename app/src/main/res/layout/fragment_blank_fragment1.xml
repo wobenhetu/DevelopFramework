@@ -4,7 +4,7 @@
              android:layout_height="wrap_content"
               android:orientation="vertical"
              android:background="@android:color/white"
-             tools:context="com.dvp.base.fenwu.developframework.ui.activity.BlankFragment1">
+             tools:context="com.dvp.base.fenwu.developframework.fragmentmodule.BlankFragment1">
 
     <!-- TODO: Update blank fragment layout -->
     <Button

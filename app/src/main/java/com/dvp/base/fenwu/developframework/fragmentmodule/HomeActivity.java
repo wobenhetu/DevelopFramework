@@ -10,8 +10,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.dvp.base.fenwu.developframework.R;
-import com.dvp.base.fenwu.developframework.ui.activity.BlankFragment1;
-import com.dvp.base.fenwu.developframework.ui.activity.BlankFragment4;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;

@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.dvp.base.fenwu.developframework.ui.activity.MultiFragmentActivity"
+    tools:context="com.dvp.base.fenwu.developframework.fragmentmodule.MultiFragmentActivity"
     android:orientation="vertical">
     <ScrollView
         android:layout_width="match_parent"

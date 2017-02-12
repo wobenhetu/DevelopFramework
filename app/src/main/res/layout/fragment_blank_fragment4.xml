@@ -3,7 +3,7 @@
              android:layout_width="match_parent"
              android:layout_height="match_parent"
              android:background="@android:color/holo_blue_light"
-             tools:context="com.dvp.base.fenwu.developframework.ui.activity.BlankFragment4">
+             tools:context="com.dvp.base.fenwu.developframework.fragmentmodule.BlankFragment4">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView

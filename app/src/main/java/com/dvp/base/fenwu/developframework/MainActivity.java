@@ -26,10 +26,7 @@ import com.dvp.base.fenwu.developframework.demo.bean.SUser;
 import com.dvp.base.fenwu.developframework.demo.bean.TestBean;
 import com.dvp.base.fenwu.developframework.demo.bean.TestGson;
 import com.dvp.base.fenwu.developframework.demo.interfaces.ApiService;
-import com.dvp.base.fenwu.developframework.downloadModule.DownLoadManagerActivity;
 import com.dvp.base.fenwu.developframework.fragmentmodule.HomeActivity;
-import com.dvp.base.fenwu.developframework.ui.activity.MultiFragmentActivity;
-import com.dvp.base.fenwu.developframework.ui.activity.RxjavaTest1Activity;
 import com.google.gson.Gson;
 
 import butterknife.Bind;

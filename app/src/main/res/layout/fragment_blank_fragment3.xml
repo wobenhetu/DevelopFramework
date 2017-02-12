@@ -3,7 +3,7 @@
              android:layout_width="match_parent"
              android:layout_height="wrap_content"
               android:orientation="vertical"
-             tools:context="com.dvp.base.fenwu.developframework.ui.activity.BlankFragment3">
+             tools:context="com.dvp.base.fenwu.developframework.fragmentmodule.BlankFragment3">
 
     <Button
         android:id="@+id/btn_next"
