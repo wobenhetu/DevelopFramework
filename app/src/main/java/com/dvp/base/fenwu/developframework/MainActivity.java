@@ -22,6 +22,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
+import com.dvp.base.fenwu.developframework.aopModule.AopActivity;
 import com.dvp.base.fenwu.developframework.demo.bean.SUser;
 import com.dvp.base.fenwu.developframework.demo.bean.TestBean;
 import com.dvp.base.fenwu.developframework.demo.bean.TestGson;
@@ -70,8 +71,11 @@ public class MainActivity extends AppCompatActivity
             {
                /* Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();*/
-                Intent intent = new Intent(MainActivity.this, HomeActivity.class);
+               /* Intent intent = new Intent(MainActivity.this, HomeActivity.class);
+                startActivity(intent);*/
+                Intent intent = new Intent(MainActivity.this, AopActivity.class);
                 startActivity(intent);
+
 
             }
         });

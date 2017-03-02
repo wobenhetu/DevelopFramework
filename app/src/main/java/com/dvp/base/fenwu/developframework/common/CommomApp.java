@@ -1,5 +1,9 @@
 package com.dvp.base.fenwu.developframework.common;
 
+import android.content.Context;
+import android.support.multidex.MultiDex;
+
+import com.dvp.base.app.APP;
 import com.tencent.tinker.loader.app.TinkerApplication;
 import com.tencent.tinker.loader.shareutil.ShareConstants;
 
@@ -8,33 +12,14 @@ import com.tencent.tinker.loader.shareutil.ShareConstants;
  * <p>
  * 功能描述:DevelopFramework
  */
-public class CommomApp extends TinkerApplication
+public class CommomApp extends APP
 {
-    public CommomApp() {
-        super(
-                //tinkerFlags, which types is supported
-                //dex only, library only, all support
-                ShareConstants.TINKER_ENABLE_ALL,
-                // This is passed as a string so the shell application does not
-                // have a binary dependency on your ApplicationLifeCycle class.
-                "tinker.sample.android.app.SampleApplicationLike");
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(base);
+        //方法数越界的处理
+        MultiDex.install(this);
     }
-
-    protected CommomApp(int tinkerFlags)
-    {
-        super(tinkerFlags);
-    }
-
-    protected CommomApp(int tinkerFlags, String delegateClassName, String loaderClassName, boolean tinkerLoadVerifyFlag)
-    {
-        super(tinkerFlags, delegateClassName, loaderClassName, tinkerLoadVerifyFlag);
-    }
-
-    protected CommomApp(int tinkerFlags, String delegateClassName)
-    {
-        super(tinkerFlags, delegateClassName);
-    }
-
 
 }
 
