@@ -22,13 +22,13 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
-import com.dvp.base.fenwu.developframework.alarmModule.AlarmActivity;
-import com.dvp.base.fenwu.developframework.aopModule.AopActivity;
+import com.dvp.base.fenwu.developframework.RecyclerviewModule.RecyclerViewActivity;
+import com.dvp.base.fenwu.developframework.animationModule.AnimationActivity;
+import com.dvp.base.fenwu.developframework.dagger2Module.DaggerActivity;
 import com.dvp.base.fenwu.developframework.demo.bean.SUser;
 import com.dvp.base.fenwu.developframework.demo.bean.TestBean;
 import com.dvp.base.fenwu.developframework.demo.bean.TestGson;
 import com.dvp.base.fenwu.developframework.demo.interfaces.ApiService;
-import com.dvp.base.fenwu.developframework.fragmentmodule.HomeActivity;
 import com.google.gson.Gson;
 
 import butterknife.Bind;
@@ -52,6 +52,8 @@ public class MainActivity extends AppCompatActivity
     Button button2;
     @Bind(R.id.imageView3)
     ImageView imageView3;
+    @Bind(R.id.recyclerview_btn)
+    Button recyclerviewBtn;
 
     private MyHandler handler;
 
@@ -74,9 +76,12 @@ public class MainActivity extends AppCompatActivity
                         .setAction("Action", null).show();*/
                /* Intent intent = new Intent(MainActivity.this, HomeActivity.class);
                 startActivity(intent);*/
-                Intent intent = new Intent(MainActivity.this, AlarmActivity.class);
-                startActivity(intent);
 
+               /* Intent intent = new Intent(MainActivity.this, HomeActivity.class);
+                startActivity(intent);*/
+
+                Intent intent = new Intent(MainActivity.this, AnimationActivity.class);
+                startActivity(intent);
 
             }
         });
@@ -102,6 +107,7 @@ public class MainActivity extends AppCompatActivity
     {
         Glide.with(MainActivity.this).load("http://hpw123.coding.me/img/avatar.png").into(imageView3);
     }
+
     private void testHandler()
     {
         handler = new MyHandler();
@@ -132,6 +138,13 @@ public class MainActivity extends AppCompatActivity
                 handler.sendEmptyMessage(0);
             }
         }).start();*/
+    }
+
+    @OnClick(R.id.recyclerview_btn)
+    public void onViewClicked()
+    {
+        //startActivity(new Intent(this,RecyclerViewActivity.class));
+        startActivity(new Intent(this,DaggerActivity.class));
     }
 
     private class MyHandler extends Handler

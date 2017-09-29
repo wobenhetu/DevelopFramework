@@ -14,6 +14,8 @@ import com.tencent.tinker.loader.shareutil.ShareConstants;
  */
 public class CommomApp extends APP
 {
+
+
     @Override
     protected void attachBaseContext(Context base) {
         super.attachBaseContext(base);

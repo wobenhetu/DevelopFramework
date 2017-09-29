@@ -5,14 +5,17 @@ import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AbsListView;
 import android.widget.Button;
 
 import com.dvp.base.adapter.listviewadapter.BaseAdapterHelper;
 import com.dvp.base.adapter.listviewadapter.QuickAdapter;
 import com.dvp.base.fenwu.developframework.R;
+import com.dvp.base.fenwu.developframework.common.CommomApp;
 import com.dvp.base.view.NestedListView;
 
 import java.util.ArrayList;
@@ -43,10 +46,22 @@ public class BlankFragment1 extends Fragment
     private FragmentManager manager;
     private FragmentTransaction ft;
 
+    private int scrolledX;
+    private int scrolledY;
 
     public BlankFragment1()
     {
         // Required empty public constructor
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState)
+    {
+        super.onCreate(savedInstanceState);
+        for (int i = 0; i < 20; i++)
+        {
+            mData.add("aaaaa" + i);
+        }
     }
 
 
@@ -58,6 +73,9 @@ public class BlankFragment1 extends Fragment
         View view = inflater.inflate(R.layout.fragment_blank_fragment1, container, false);
         ButterKnife.bind(this, view);
 
+        //listview.scrollTo( CommomApp.getInstance().getAppConfig().getInt("x",0), CommomApp.getInstance().getAppConfig().getInt("y",0));
+        //System.out.println("dfw===000x="+CommomApp.getInstance().getAppConfig().getInt("x",0));
+        //System.out.println("dfw===000y="+CommomApp.getInstance().getAppConfig().getInt("y",0));
         init();
         return view;
     }
@@ -66,11 +84,6 @@ public class BlankFragment1 extends Fragment
     {
 
         manager = getFragmentManager();
-
-        for (int i = 0; i < 10; i++)
-        {
-            mData.add("aaaaa" + i);
-        }
 
         adapter = new QuickAdapter<String>(getActivity(), R.layout.item_list_aaa, mData)
         {
@@ -81,6 +94,30 @@ public class BlankFragment1 extends Fragment
             }
         };
         listview.setAdapter(adapter);
+       /* listview.setOnScrollListener(new AbsListView.OnScrollListener() {
+
+            *//**
+             * 滚动状态改变时调用
+             *//*
+            @Override
+            public void onScrollStateChanged(AbsListView view, int scrollState) {
+                // 不滚动时保存当前滚动到的位置
+                if (scrollState == AbsListView.OnScrollListener.SCROLL_STATE_IDLE) {
+
+                        //scrolledX = listview.getScrollX();
+                    CommomApp.getInstance().getAppConfig().setInt("x",listview.getScrollX());
+                        //scrolledY = listview.getScrollY();
+                    CommomApp.getInstance().getAppConfig().setInt("y",listview.getScrollY());
+                }
+            }
+
+            *//**
+             * 滚动时调用
+             *//*
+            @Override
+            public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
+            }
+        });*/
     }
 
     @Override

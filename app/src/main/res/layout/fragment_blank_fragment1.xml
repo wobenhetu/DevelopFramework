@@ -12,9 +12,20 @@
         android:text="跳转到第二个fragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
-   <com.dvp.base.view.NestedListView
-       android:id="@+id/listview"
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"></com.dvp.base.view.NestedListView>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <com.dvp.base.view.NestedListView
+                android:id="@+id/listview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"></com.dvp.base.view.NestedListView>
+        </LinearLayout>
+    </ScrollView>
+
 
 </LinearLayout>
